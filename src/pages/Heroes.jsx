@@ -1,6 +1,11 @@
 import React from "react";
 import axios from "axios";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import {Navigation, Pagination} from 'swiper'
+import '../teste.css'
+import 'swiper/css'
+import 'swiper/css/navigation';
+import 'swiper/css/pagination'
 class Heroes extends React.Component {
   constructor(props) {
     super(props);
@@ -18,34 +23,39 @@ class Heroes extends React.Component {
 
   render() {
     return (
-      <><h1 className="text-center bg-black text-white leading-loose  text-4xl 	">
-        Bem-vindos ao mundo de Heróis e Vilões</h1>
-        <div className="w-full text-white bg-black columns-2">
+      <><Swiper
+        modules={[Navigation, Pagination]}
+        navigation={true}
+        pagination={{ clickable: true }}
+        loop={true}
+        className="swiper-container italic">
+        <div>
+          <div>
+            <>
+              <ul className="slide-item">
+                {this.state.heroes.map((heroes) => (
+                  <SwiperSlide>
+                    <div>
+                      <ul key={heroes.id}></ul>
+                    </div>
+                    <div>
+                      <ul className="text">{heroes.name}</ul>
+                    </div>
+                    <div>
+                      <ul>
+                        <img className="slide-item "
+                          src={heroes.image}
+                          alt="img" />
+                      </ul>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </ul>
+            </>
+          </div>
+        </div>
+      </Swiper></>
 
-        <ul className="flex flex-wrap text-white rounded-full p-10 itext-right m-20 leading-10">
-          {this.state.heroes.map((heroes) => (
-            <div>
-              <div>
-                <li key={heroes.id}></li>
-              </div>
-              <div className="text-center	">
-              <li>{heroes.name}</li>
-            </div>
-              {/* <div className="w-1/3	">
-              <li>{heroes.gender}</li>
-            </div> */}
-              {/* <div className="w-1/3	">
-              <li>{heroes.alignment}</li>
-            </div> */}
-              <div >
-                <li>
-                  <img className="rounded-full" src={heroes.image} alt="" />
-                </li>
-              </div>
-            </div>
-          ))}
-        </ul>
-      </div></>
     );
   }
 }

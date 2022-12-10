@@ -1,0 +1,25 @@
+*{
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+  text-align: center;
+  
+}
+.swiper-container{
+  height: 80vh;
+
+}
+.slide-item{
+  margin:100px;
+  padding: auto;
+  margin-right: auto;
+  margin-left: auto;
+
+
+}
+.slide-item img{
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  justify-content: center;
+}
