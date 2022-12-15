@@ -1,9 +1,13 @@
 *{
   box-sizing: border-box;
-  background-color: black;
+  background-image: url('./img/dc.jpg');
   color: white;
+  font-weight: bold;
   text-align: center;
   
+}
+.color {
+  background-color: black;
 }
 .swiper-container{
   height: 80vh;

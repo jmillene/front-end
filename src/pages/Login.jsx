@@ -36,14 +36,15 @@ class Login extends React.Component {
     const { email, password, name } = this.state;
     return (
       <div>
-        <form>
-          <label>Usuário
-            <input type="name" value={name} placeholder= "insria seu nome de usuario"
+        <form className="bg-white-700">
+          <label >Usuário : 
+
+            <input type="name" value={name} placeholder= "insira seu nome de usuario"
             required
             onChange={this.handleChangeName}/>
           </label>
           <label htmlFor="">
-            Email:
+            Email :
             <input
               type="email"
               value={email}
@@ -52,7 +53,7 @@ class Login extends React.Component {
             />
           </label>
           <label>
-            Senha:
+            Senha :
             <input
               type="password"
               value={password}
